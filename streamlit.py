@@ -7,7 +7,7 @@ excel_file = 'user_data.xlsx'
 
 # Check if the Excel file exists, and if not, create it with appropriate columns
 if not os.path.exists(excel_file):
-    df = pd.DataFrames(columns=['Name', 'Gender'])
+    df = pd.DataFrame(columns=['Name', 'Gender'])
     df.to_excel(excel_file, index=False)
 
 # Streamlit form interface
@@ -31,7 +31,7 @@ if submit_button:
         new_data = pd.DataFrame({'Name': [name], 'Gender': [gender]})
         df = pd.concat([df, new_data], ignore_index=True)
 
-        # Save the updated DataFrame back to the Excel file
+        # Save the updated DataFrames back to the Excel files
         df.to_excel(excel_file, index=False)
 
         # Display a success message to the user
